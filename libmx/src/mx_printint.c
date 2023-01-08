@@ -1,0 +1,15 @@
+#include "../inc/libmx.h"
+
+void mx_printint(int n) {
+    long long num = n;
+    if (num < 0) {
+        mx_printchar('-');
+        num *= -1;
+    }
+    if (num <= -10 || num >= 10) {
+        mx_printint(num / 10);
+    }
+ 
+    mx_printchar((num % 10) + 48);
+}
+
